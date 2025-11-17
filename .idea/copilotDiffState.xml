@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/app/login/imports/svg-5srtqv8tnp.ts">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/app/login/imports/svg-5srtqv8tnp.ts" />
+              <option name="updatedContent" value="// Auto-generated stub for SVG path data used by the login page.&#10;// These are placeholders so the component compiles. Replace with real paths if available.&#10;const svgPaths = {&#10;  p1596600: &quot;M0 0h22v22H0z&quot;,&#10;  p1ee65b80: &quot;M0 0h20v20H0z&quot;,&#10;  p2a04c80: &quot;M0 0h20v20H0z&quot;,&#10;};&#10;&#10;export default svgPaths;&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
