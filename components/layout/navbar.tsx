@@ -52,13 +52,13 @@ export default function Navbar() {
     }, [lastScrollY, isMobileMenuOpen]);
 
     const navLinks = [
-        {name: "HOME", href: "http://localhost:3000/"},
+        {name: "HOME", href: "https://fainzy-website-v2.vercel.app/"},
         {name: "LOGIN", href: "/login"},
-        {name: "ABOUT", href: "http://localhost:3000/about"},
-        {name: "PRODUCTS", href: "http://localhost:3000/#products"},
-        {name: "CAREERS", href: "http://localhost:3000http://localhost:3000/careers"},
-        {name: "CONTACT", href: "http://localhost:3000/contact"},
-        {name: "BLOG", href: "http://localhost:3000/blog"},
+        {name: "ABOUT", href: "https://fainzy-website-v2.vercel.app/about"},
+        {name: "PRODUCTS", href: "https://fainzy-website-v2.vercel.app/#products"},
+        {name: "CAREERS", href: "https://fainzy-website-v2.vercel.app/careers"},
+        {name: "CONTACT", href: "https://fainzy-website-v2.vercel.app/contact"},
+        {name: "BLOG", href: "https://fainzy-website-v2.vercel.app/blog"},
         {name: "BUSINESS", href: "/"},
     ];
 
