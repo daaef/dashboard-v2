@@ -87,7 +87,7 @@ export default function Footer({ hideLinks = false }: FooterProps) {
                           </li>
                           <li>
                               <Link
-                                  href="/business"
+                                  href="/"
                                   className="text-foreground/80 hover:text-foreground transition-colors text-sm"
                               >
                                   Fainzy Business

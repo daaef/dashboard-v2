@@ -59,7 +59,7 @@ export default function Navbar() {
         {name: "CAREERS", href: "http://localhost:3000http://localhost:3000/careers"},
         {name: "CONTACT", href: "http://localhost:3000/contact"},
         {name: "BLOG", href: "http://localhost:3000/blog"},
-        {name: "BUSINESS", href: "/business"},
+        {name: "BUSINESS", href: "/"},
     ];
 
     return (
