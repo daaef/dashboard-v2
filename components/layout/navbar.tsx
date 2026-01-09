@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import {Bell, Globe, User, Menu, X, Headset, Check} from "lucide-react";
-import {useEffect, useState} from "react";
-import {motion, AnimatePresence} from "motion/react";
-import {useLocale} from "@/contexts/LocaleContext";
+import { Bell, Globe, User, Menu, X, Headset, Check } from "lucide-react";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { useLocale } from "@/contexts/LocaleContext";
 
 export default function Navbar() {
-    const {locale, setLocale} = useLocale();
+    const { locale, setLocale } = useLocale();
     const [isAtTop, setIsAtTop] = useState(true);
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
@@ -44,7 +44,7 @@ export default function Navbar() {
             setLastScrollY(currentScrollY);
         };
 
-        window.addEventListener("scroll", handleScroll, {passive: true});
+        window.addEventListener("scroll", handleScroll, { passive: true });
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
@@ -52,27 +52,26 @@ export default function Navbar() {
     }, [lastScrollY, isMobileMenuOpen]);
 
     const navLinks = [
-        {name: "HOME", href: "https://fainzy-website-v2.vercel.app/"},
-        {name: "LOGIN", href: "/login"},
-        {name: "ABOUT", href: "https://fainzy-website-v2.vercel.app/about"},
-        {name: "PRODUCTS", href: "https://fainzy-website-v2.vercel.app/#products"},
-        {name: "CAREERS", href: "https://fainzy-website-v2.vercel.app/careers"},
-        {name: "CONTACT", href: "https://fainzy-website-v2.vercel.app/contact"},
-        {name: "BLOG", href: "https://fainzy-website-v2.vercel.app/blog"},
-        {name: "BUSINESS", href: "/"},
+        { name: "HOME", href: "https://cms.fainzy.ai/" },
+        { name: "ABOUT", href: "https://cms.fainzy.ai/about" },
+        { name: "PRODUCTS", href: "https://cms.fainzy.ai/#products" },
+        { name: "CAREERS", href: "https://cms.fainzy.ai/careers" },
+        { name: "CONTACT", href: "https://cms.fainzy.ai/contact" },
+        { name: "BLOG", href: "https://cms.fainzy.ai/blog" },
+        { name: "BUSINESS", href: "/" },
+        { name: "LOGIN", href: "/login" },
     ];
 
     return (
 
         <motion.nav
-            initial={{y: -100}}
-            animate={{y: 0}}
-            transition={{duration: 0.6, ease: "easeOut"}}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-                isAtTop
-                    ? "bg-transparent border-transparent"
-                    : "bg-background/95 backdrop-blur-sm"
-            } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isAtTop
+                ? "bg-transparent border-transparent"
+                : "bg-background/95 backdrop-blur-sm"
+                } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
             data-name="Nav"
         >
             <div className="max-w-[1536px] mx-auto px-4 sm:px-6 md:px-10 py-2">
@@ -95,10 +94,10 @@ export default function Navbar() {
                             <motion.a
                                 key={link.name}
                                 href={link.href}
-                                initial={{opacity: 0, y: -20}}
-                                animate={{opacity: 1, y: 0}}
-                                transition={{delay: i * 0.1, duration: 0.5}}
-                                whileHover={{y: -2}}
+                                initial={{ opacity: 0, y: -20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.1, duration: 0.5 }}
+                                whileHover={{ y: -2 }}
                                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
                             >
                                 {link.name}
@@ -114,7 +113,7 @@ export default function Navbar() {
                                 className="p-2 hover:bg-secondary rounded-lg transition-colors"
                                 aria-label="Notifications"
                             >
-                                <Bell className="w-5 h-5 text-foreground"/>
+                                <Bell className="w-5 h-5 text-foreground" />
                             </button>
                             <div className="relative">
                                 <button
@@ -122,20 +121,20 @@ export default function Navbar() {
                                     aria-label="Language"
                                     onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
                                 >
-                                    <Globe className="w-5 h-5 text-foreground"/>
+                                    <Globe className="w-5 h-5 text-foreground" />
                                     <span
                                         className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-foreground text-[10px] text-background font-bold rounded-full flex items-center justify-center">
-                    {locale.toUpperCase()}
-                  </span>
+                                        {locale.toUpperCase()}
+                                    </span>
                                 </button>
 
                                 <AnimatePresence>
                                     {isLangMenuOpen && (
                                         <motion.div
-                                            initial={{opacity: 0, y: -10}}
-                                            animate={{opacity: 1, y: 0}}
-                                            exit={{opacity: 0, y: -10}}
-                                            transition={{duration: 0.2}}
+                                            initial={{ opacity: 0, y: -10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            exit={{ opacity: 0, y: -10 }}
+                                            transition={{ duration: 0.2 }}
                                             className="absolute right-0 mt-2 w-32 bg-[#101010] border border-[rgba(255,255,255,0.08)] rounded-lg shadow-lg overflow-hidden z-50"
                                         >
                                             <button
@@ -146,7 +145,7 @@ export default function Navbar() {
                                                 className="w-full px-4 py-2.5 text-left text-sm hover:bg-[rgba(255,255,255,0.05)] transition-colors flex items-center justify-between"
                                             >
                                                 <span>English</span>
-                                                {locale === "en" && <Check className="w-4 h-4 text-primary"/>}
+                                                {locale === "en" && <Check className="w-4 h-4 text-primary" />}
                                             </button>
                                             <button
                                                 onClick={() => {
@@ -156,7 +155,7 @@ export default function Navbar() {
                                                 className="w-full px-4 py-2.5 text-left text-sm hover:bg-[rgba(255,255,255,0.05)] transition-colors flex items-center justify-between"
                                             >
                                                 <span>日本語</span>
-                                                {locale === "ja" && <Check className="w-4 h-4 text-primary"/>}
+                                                {locale === "ja" && <Check className="w-4 h-4 text-primary" />}
                                             </button>
                                         </motion.div>
                                     )}
@@ -166,7 +165,7 @@ export default function Navbar() {
                                 className="p-2 hover:bg-secondary rounded-lg transition-colors"
                                 aria-label="Profile"
                             >
-                                <User className="w-5 h-5 text-foreground"/>
+                                <User className="w-5 h-5 text-foreground" />
                             </button>
                         </div>
 
@@ -177,9 +176,9 @@ export default function Navbar() {
                             aria-label="Toggle menu"
                         >
                             {isMobileMenuOpen ? (
-                                <X className="w-6 h-6 text-foreground"/>
+                                <X className="w-6 h-6 text-foreground" />
                             ) : (
-                                <Menu className="w-6 h-6 text-foreground"/>
+                                <Menu className="w-6 h-6 text-foreground" />
                             )}
                         </button>
                     </div>
@@ -206,19 +205,19 @@ export default function Navbar() {
                                     className="p-2 hover:bg-secondary rounded-lg transition-colors"
                                     aria-label="Support"
                                 >
-                                    <Headset className="w-5 h-5 text-foreground"/>
+                                    <Headset className="w-5 h-5 text-foreground" />
                                 </button>
                                 <button
                                     className="p-2 hover:bg-secondary rounded-lg transition-colors"
                                     aria-label="Language"
                                 >
-                                    <Globe className="w-5 h-5 text-foreground"/>
+                                    <Globe className="w-5 h-5 text-foreground" />
                                 </button>
                                 <button
                                     className="p-2 hover:bg-secondary rounded-lg transition-colors"
                                     aria-label="Profile"
                                 >
-                                    <User className="w-5 h-5 text-foreground"/>
+                                    <User className="w-5 h-5 text-foreground" />
                                 </button>
                             </div>
                         </div>
